@@ -195,7 +195,7 @@ body.nav-active { overflow: hidden; }
   outline: none;
 }
 
-.btn-secondary { --bg: var(--oxford-blue); }
+.btn-secondary { --bg: var(--oxford-blue);}
 
 :is(.btn-primary, .btn-secondary):is(:hover, :focus-visible) {
   box-shadow: 0 0 0 2px var(--white), 0 0 0 5px var(--bg);
@@ -309,8 +309,6 @@ body.nav-active { overflow: hidden; }
 
 
 
-
-
 /*-----------------------------------*\
   #HEADER
 \*-----------------------------------*/
@@ -322,6 +320,7 @@ body.nav-active { overflow: hidden; }
   top: 0;
   left: 0;
   width: 100%;
+  display: flex;
   padding-block: 32px;
   z-index: 4;
 }
@@ -341,24 +340,32 @@ body.nav-active { overflow: hidden; }
 .header .container,
 .navbar-top {
   display: flex;
-  justify-content: space-evenly;
+  justify-content: space-between;
   align-items: center;
   margin-left: 400px;
-  
 }
- 
+
 @media(max-width:480px){
   .header .container,
-.navbar-top {
-  margin-left: 1px;}
-}
+  .navbar-top {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-left: 70px;
+}}
+ .card-price{
+  color: orange !important;
+ }
 .nav-open-btn,
 .nav-close-btn { font-size: 32px; }
 
 .navbar {
   position: fixed;
   top: 0;
+  left: -320px;
+  max-width: 320px;
   width: 100%;
+  background-color: var(--white);
   height: 100vh;
   padding: 40px 16px;
   z-index: 2;
@@ -374,16 +381,15 @@ body.nav-active { overflow: hidden; }
 
 .navbar-top { margin-block-end: 34px; }
 
-.nav-close-btn ion-icon { --ionicon-stroke-width: 35px;}
+.nav-close-btn ion-icon { --ionicon-stroke-width: 35px; }
 
 .navbar-item:not(:last-child) { border-block-end: 1px solid var(--black_10); }
 
 .navbar-link {
   padding-block: 8px;
-  margin-left: 40px;
   transition: var(--transition);
+  margin-left: 20px;
 }
-
 
 .navbar-link:is(:hover, :focus-visible) { color: var(--oxford-blue); }
 
